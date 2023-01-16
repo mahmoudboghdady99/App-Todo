@@ -5,7 +5,7 @@ import './AddItem.css'
 class AddItem extends Component {
     render() {
         return (
-            <div className='div'>
+            <div>
                 add item
             </div>
         );
