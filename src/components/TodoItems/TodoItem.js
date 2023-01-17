@@ -2,16 +2,21 @@ import React from "react";
 import "./TodoItems.css";
 
 const TodoItem = (props) => {
-  const { items } = props;
-  const allItems = items.map((item) => {
+  const { items , deleteItems} = props;
+  let  length = items.length;
+  const allItems = length ? items.map((item) => {
     return (
       <div key={item.id}>
         <span>{item.name}</span>
         <span>{item.age}</span>
-        <span>&times;</span>
+        <span onClick={() => deleteItems(item.id)}>&times;</span>
       </div>
     );
-  });
+  }) : <p>
+    there is no items to show
+  </p>
+
+
   return (
 <div>
         <div>
